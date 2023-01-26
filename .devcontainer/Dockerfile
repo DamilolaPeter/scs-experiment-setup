@@ -26,7 +26,7 @@ RUN ${BUILD} gr-bokehgui=master ${PARMS}
 RUN ${BUILD} gr-iqbal=master ${PARMS}
 
 # activate toolchain configuration
-RUN /cortexlab/toolchains/current/bin/cxlb-toolchain-system-conf
-#RUN echo source /cortexlab/toolchains/current/bin/cxlb-toolchain-user-conf >> /etc/profile
+# RUN /cortexlab/toolchains/current/bin/cxlb-toolchain-system-conf
+# RUN echo source /cortexlab/toolchains/current/bin/cxlb-toolchain-user-conf >> /etc/profile
 RUN ln -s /cortexlab/toolchains/current/bin/cxlb-toolchain-user-conf /etc/profile.d/cxlb-toolchain-user-conf.sh
 # RUN sysctl -w net.core.wmem_max=2500000
