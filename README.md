@@ -23,3 +23,6 @@ docker run -dit --net=host --expose 2222 --privileged scs-experiment-setup:lates
 Then ssh to the container using the command `ssh -Xp 2222 root@localhost`
 
 **The docker image used in the dockerfile is large and so the build may take some time. Be patient!**
+
+----
+With the previous steps done, run the python script `get_experiment_results.py` to produce results for the experiment and commit the changes (generated CSV file).
