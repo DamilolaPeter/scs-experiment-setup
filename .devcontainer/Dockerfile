@@ -30,3 +30,13 @@ RUN ${BUILD} gr-iqbal=master ${PARMS}
 # RUN echo source /cortexlab/toolchains/current/bin/cxlb-toolchain-user-conf >> /etc/profile
 RUN ln -s /cortexlab/toolchains/current/bin/cxlb-toolchain-user-conf /etc/profile.d/cxlb-toolchain-user-conf.sh
 # RUN sysctl -w net.core.wmem_max=2500000
+
+# build the OOT library
+RUN git clone https://github.com/AllisonOge/gr-specsensor.git gr-specsensor.git
+RUN cd gr-specsensor.git/ && mkdir build && cd build/ && cmake -DCMAKE_INSTALL_PREFIX=/cortexlab/toolchains/current .. && make && make install
+
+# install deps
+RUN ${APT} install sqlite3
+
+# install pip requirements
+RUN python3 -m pip install --upgrade pip && python3 -m pip install -r requirements.txt
