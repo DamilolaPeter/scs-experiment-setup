@@ -42,4 +42,4 @@ RUN ${APT} install sqlite3
 RUN git clone https://github.com/AllisonOge/scs_predictive_analysis.git scs_predictive_analysis.git
 
 # install pip requirements
-RUN cd scs_predictive_analysis && python3 -m pip install --upgrade pip && python3 -m pip install -r requirements.txt
+RUN cd scs_predictive_analysis.git && python3 -m pip install --upgrade pip && python3 -m pip install -r requirements.txt
