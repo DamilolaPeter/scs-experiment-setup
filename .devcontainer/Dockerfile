@@ -38,5 +38,8 @@ RUN cd gr-specsensor.git/ && mkdir build && cd build/ && cmake -DCMAKE_INSTALL_P
 # install deps
 RUN ${APT} install sqlite3
 
+# temporaray build step
+RUN git clone https://github.com/AllisonOge/scs_predictive_analysis.git scs_predictive_analysis.git
+
 # install pip requirements
-RUN python3 -m pip install --upgrade pip && python3 -m pip install -r requirements.txt
+RUN cd scs_predictive_analysis && python3 -m pip install --upgrade pip && python3 -m pip install -r requirements.txt
